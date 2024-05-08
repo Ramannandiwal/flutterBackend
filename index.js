@@ -29,7 +29,6 @@ db.once('open', () => {
 
 
 app.post('/register', async (req, res) => {
-    console.log("New register request received");
     try {
         const { email, password } = req.body;
         // Check if a user with the provided email already exists
@@ -51,10 +50,8 @@ app.get("/",(req,res)=>{
     res.send("Hellowroldl ");
     })
 app.post("/login", async (req, res) => {
-    console.log("REquest arrived ")
     try {
         const { email, password } = req.body;
-        console.log(email,password);
         // Search for a user with the provided email
         const user = await User.findOne({ email });
 
